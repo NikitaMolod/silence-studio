@@ -226,8 +226,26 @@ body {
 /* Footer */
 
 .footer {
-    height: 250rpx;
+    height: 250px;
     background-color: goldenrod;
+}
+
+.footer_logo {
+    width: 20%;
+    background-color: black;
+    height: 250px;
+}
+
+.central_footer {
+    width: 40%;
+    background-color: lavender;
+    height: 250px;
+}
+
+.footer_rightside {
+    width: 40%;
+    background-color: palevioletred;
+    height: 250px;
 }
 
 
