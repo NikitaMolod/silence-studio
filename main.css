@@ -34,24 +34,70 @@ body {
     justify-content: space-between;
 }
 
-.mt25 {
-    margin-top: 25px;
+.main_text {
+    color: #333;
 }
 
-.mt50 {
-    margin-top: 50px;
+.submain_text {
+    color: #555;
 }
 
-.mt100 {
-    margin-top: 100px;
+.helper_text {
+    color: #CCC;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .white {
     color: white;
 }
 
+.p5 {
+    padding: 5px;
+}
+
+.p10 {
+    padding: 10px;
+}
+
+.p15 {
+    padding: 15px;
+}
+
+.p20 {
+    padding: 20px;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.mt25 {
+    margin-top: 25px;
+}
+
+.mt100 {
+    margin-top: 100px;
+}
+
 
 /* Вспомогательные классы*/
+
+
+/* Link */
+
+a {
+    text-decoration: none;
+}
+
+
+/* Link */
 
 
 /* Хэдер */
