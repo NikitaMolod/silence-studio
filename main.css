@@ -189,5 +189,46 @@ body {
     background-color: beige;
 }
 
+.advantages_circle {
+    background-color: cornflowerblue;
+    border-radius: 100%;
+    height: 200px;
+    border: 1px solid black;
+}
+
 
 /* наши достоинства */
+
+
+/* Feedback */
+
+.feedback {
+    height: 500px;
+    border: 1px solid black;
+}
+
+.feedback_info {
+    background-color: forestgreen;
+    width: 50%;
+    height: 500px;
+}
+
+.feedback_form {
+    width: 50%;
+    background-color: gainsboro;
+    height: 500px;
+}
+
+
+/* Feedback */
+
+
+/* Footer */
+
+.footer {
+    height: 250rpx;
+    background-color: goldenrod;
+}
+
+
+/* Footer */
