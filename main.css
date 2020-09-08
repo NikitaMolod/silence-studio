@@ -9,15 +9,14 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-.flex {
-    display: flex;
-}
 
 .center {
     align-items: center;
     justify-content: center;
 }
-
+.row, .column{
+    display: flex;
+}
 .row {
     flex-direction: row;
 }
