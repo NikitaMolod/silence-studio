@@ -14,7 +14,7 @@
 <body>
     <div class="wrapper main">
         <div class="header row between">
-            <div class="logo"></div>
+            <div class="logo column center pointer"><i class="fs35 white fab fa-apple"></i></div>
             <div class="header_section row between center ">
                 <div><a class="white" href="#">Главная</a></div>
                 <div><a class="white" href="#">Услуги</a></div>
@@ -22,24 +22,43 @@
                 <div><a class="white" href="#">О нас</a></div>
             </div>
             <div class="header_section_contacts  column center">
-                <div><a href="tel:">+9999999999999</a></div>
-                <div><a href="mailto:">Siltnce_Studio@info.com</a></div>
+                <div><a class="white bold fs12" href="tel:"><i class="fa fa-mobile-alt p5"></i>+9999999999999</a></div>
+                <div><a class="white bold fs12" href="mailto:"><i class="far fa-envelope p5"></i>Siltnce_Studio@info.com</a></div>
             </div>
-            <div class="header_section_button">
-                <div class="button"><button>Обратная связь</button> </div>
+            <div class="header_section_button center column">
+                <button class="p10 white"><i class="fal fa-comment-alt fs18 p5"></i>Обратная связь</button>
             </div>
         </div>
 
 
-        <div class="meeting_block row">
+        <div class="meeting_block row " style="padding-top:100px">
             <div class="meeting_block_section  column around center">
-                <div class="tab mt100"><i class="fad fa-user-friends"></i></div>
-                <div class="tab"></div>
-                <div class="tab"></div>
-                <div class="tab"></div>
+                <div class="tab  fs10 column center submain_text pointer"><i class="fal fa-file fs35"></i>Одностраничный сайт</div>
+                <div class="tab fs10 column center submain_text pointer"><i class="fal fa-file-alt fs35"></i> Лендинг</div>
+                <div class="tab fs10 column center submain_text pointer"><i class="fal fa-copy fs35"></i>Многостраничный сайт</div>
+                <div class="tab fs10 column center submain_text pointer"><i class="fal fa-shopping-bag fs35"></i>Магазин</div>
 
             </div>
-            <div class="meeting_block_info ">
+            <div class="meeting_block_info column center white around ">
+
+                <div class="row"><img src="assets/ svg_black/001-landing-page-2.svg">
+                    <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный блог.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный блог.
+                    </div>
+                    <img class="p20" src="assets/ svg_black/002-landing-page-1.svg">
+                </div>
+                <div class="row"><img src="assets/ svg_black/003-browser-1.svg">
+                    <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный блог.
+                    </div>
+                </div>
+
+
+
+
+
 
             </div>
         </div>
@@ -49,11 +68,12 @@
 
 
         <div class="description_occupation  row center around">
-            <div class="descrition_tabs">Консультация</div>
-            <div class="descrition_tabs">Предоплата</div>
-            <div class="descrition_tabs">разработка</div>
-            <div class="descrition_tabs">Правки</div>
-            <div class="descrition_tabs">Продвижение</div>
+            <div class="descrition_tabs center column pointer"><img src="assets/svg_consultation/001-operator.svg">Консультация <button class="submain_text p5">Подробнее</button><i class="p5 fal fa-hand-pointer"></i></div>
+
+            <div class="descrition_tabs center column pointer"><img src="assets/svg_payment/001-credit-card.svg">Предоплата <button class="submain_text p5">Подробнее</button><i class="p5 fal fa-hand-pointer"></i></div>
+            <div class="descrition_tabs center column pointer"><img src="assets/svg_development/002-gamer.svg">Разработка <button class="submain_text p5">Подробнее</button><i class="p5 fal fa-hand-pointer"></i></div>
+            <div class="descrition_tabs center column pointer"><img src="assets/svg_edit/001-graphic-design-1.svg">Правки <button class="submain_text p5">Подробнее</button><i class="p5 fal fa-hand-pointer"></i></div>
+            <div class="descrition_tabs center column pointer"><img src="assets/svg_promotion/001-loudspeaker.svg">Продвижение <button class="submain_text p5">Подробнее</button><i class="p5 fal fa-hand-pointer"></i></div>
 
         </div>
 
@@ -116,17 +136,17 @@
 
 
 
-        <div class="feedback  ">
+        <!-- <div class="feedback  ">
             <div class="feedback_info"></div>
-            <div class="feedback_form">
-                <form class=" center column ">
+            <div class="feedback_form column">
+                <form class=" center row">
                     <div><input type="text" value="Имя"></div>
                     <div><input type="mail" value=" E-mail"></div>
                     <div><input type="tel" value="Телефон"></div>
                     <div><textarea></textarea></div>
                 </form>
             </div>
-        </div>
+        </div> -->
 
 
 
@@ -150,6 +170,7 @@
 
 
         </div>
+    </div>
 
 </body>
 

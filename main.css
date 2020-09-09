@@ -1,5 +1,6 @@
 body {
     margin: 0px;
+    font-family: Monaco;
 }
 
 
@@ -9,14 +10,17 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-
 .center {
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
-.row, .column{
+
+.row,
+.column {
     display: flex;
 }
+
 .row {
     flex-direction: row;
 }
@@ -33,6 +37,10 @@ body {
     justify-content: space-between;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .main_text {
     color: #333;
 }
@@ -43,6 +51,38 @@ body {
 
 .helper_text {
     color: #CCC;
+}
+
+.lh2 {
+    line-height: 2;
+}
+
+.fs20 {
+    font-size: 20px;
+}
+
+.fs14 {
+    font-size: 14px;
+}
+
+.fs12 {
+    font-size: 12px;
+}
+
+.fs10 {
+    font-size: 10px;
+}
+
+.fs18 {
+    font-size: 18px;
+}
+
+.fs24 {
+    font-size: 24px;
+}
+
+.fs35 {
+    font-size: 35px;
 }
 
 .bold {
@@ -95,6 +135,21 @@ a {
     text-decoration: none;
 }
 
+button {
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: all .2s;
+    background-color: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 0px;
+}
+
 
 /* Link */
 
@@ -111,7 +166,6 @@ a {
 
 .logo {
     width: 15%;
-    border: 2px solid black;
 }
 
 .header_section {
@@ -119,12 +173,10 @@ a {
 }
 
 .header_section_contacts {
-    border: 2px solid black;
     width: 15%;
 }
 
 .header_section_button {
-    border: 2px solid black;
     width: 25%;
 }
 
@@ -137,26 +189,33 @@ a {
 .meeting_block {
     background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
     background-repeat: no-repeat;
-    height: 700px;
-    border: 2px solid white;
+    height: 600px;
     width: 100%;
 }
 
 .meeting_block_section {
     width: 30%;
-    border: 1px solid white;
-    height: 700px;
 }
 
 .tab {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
     border-radius: 40%;
     background-color: white;
+    transition: all .2s .1s ease;
+}
+
+.tab:hover {
+    background-color: #EEF;
+    transform: scale(1.05);
 }
 
 .meeting_block_info {
     width: 70%;
+}
+
+.meeting_block_info img {
+    width: 100px;
 }
 
 
@@ -176,6 +235,10 @@ a {
     height: 200px;
     border-radius: 10%;
     background-color: white;
+}
+
+.description_occupation img {
+    width: 100px;
 }
 
 
