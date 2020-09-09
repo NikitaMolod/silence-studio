@@ -133,14 +133,15 @@ body {
 
 a {
     text-decoration: none;
-    color:inherit;
-}
-button{
     color: inherit;
 }
 
 button {
-    border: 2px solid white;
+    color: inherit;
+}
+
+button {
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     transition: all .2s;
     background-color: transparent;
@@ -168,9 +169,10 @@ button:focus {
     z-index: 1000;
     transition: all .2s ease-in;
 }
-.white_header{
-    background:#EEE;
-    color:#333;
+
+.white_header {
+    background: #EEE;
+    color: #333;
 }
 
 .logo {
@@ -197,8 +199,8 @@ button:focus {
 
 .meeting_block {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 25s ease infinite;
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
     height: 600px;
     width: 100%;
 }
@@ -211,32 +213,41 @@ button:focus {
     width: 110px;
     height: 110px;
     border-radius: 30%;
-    background-color: rgba(50,50,50,0.2);
+    background-color: rgba(50, 50, 50, 0.2);
     transition: all .15s .0s ease;
-    color:#EEE;
-    border:1px solid transparent;
+    color: #EEE;
+    border: 1px solid transparent;
+}
+
+.tab span {
+    margin: 5px;
 }
 
 .tab:hover {
-    background-color: rgba(50,50,50,0.5);
+    background-color: rgba(50, 50, 50, 0.5);
     transform: scale(1.07);
-    box-shadow: 1px 1px 12px rgba(0,0,0,0.1);
-    color:#FFF;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
+    color: #FFF;
 }
-.fade-enter-active, .fade-leave-active {
+
+.fade-enter-active,
+.fade-leave-active {
     transition: all .3s ease;
-  }
-.fade-enter, .fade-leave-to {
+}
+
+.fade-enter,
+.fade-leave-to {
     opacity: 0;
-    transform: translate(-100px,0px);
-  }
-.active_tab{
-    background-color: rgba(50,50,50,0.5);
+    transform: translate(-100px, 0px);
+}
+
+.active_tab {
+    background-color: rgba(50, 50, 50, 0.5);
     transform: scale(1.07);
     border-radius: 35%;
-    box-shadow: 1px 1px 12px rgba(0,0,0,0.15);
-    color:#FFF;
-    border:1px solid rgba(200,200,200,0.3)
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.15);
+    color: #FFF;
+    border: 1px solid rgba(200, 200, 200, 0.3)
 }
 
 .meeting_block_info {
@@ -396,49 +407,93 @@ button:focus {
     background-color: palevioletred;
     height: 250px;
 }
-.bounce{
+
+.bounce {
     animation: bounce 2s .1s ease infinite alternate-reverse;
 }
-.slideup{
+
+.slideup {
     animation: slideup 2s .1s ease infinite alternate-reverse;
 }
-.slidedown{
+
+.slidedown {
     animation: slidedown 2s .1s ease infinite alternate-reverse;
 }
+
+@media screen and (max-width:580px) {
+    .meeting_block.row {
+        flex-direction: column;
+    }
+    .meeting_block_section.column {
+        flex-direction: row;
+        width: 100%;
+    }
+    .header_section,
+    .header_section_button,
+    .header_section_contacts {
+        display: none;
+    }
+    .header.between {
+        justify-content: space-around;
+        height: 50px;
+    }
+    .tab {
+        width: 70px;
+        height: 70px;
+        font-size: 7px;
+    }
+    .tab i {
+        font-size: 15px;
+    }
+    .meeting_block_info {
+        width: 100%;
+    }
+    .meeting_block_info .row {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-top: 20px;
+    }
+}
+
 @keyframes bounce {
-    from{
+    from {
         transform: scale(1);
     }
-    to{
+    to {
         transform: scale(1.07);
     }
 }
+
 @keyframes slideup {
-    from{
+    from {
         transform: translate(0);
     }
-    to{
-        transform: translate(0,-10px);
+    to {
+        transform: translate(0, -10px);
     }
 }
+
 @keyframes slidedown {
-    from{
+    from {
         transform: translate(0);
     }
-    to{
-        transform: translate(0,10px);
+    to {
+        transform: translate(0, 10px);
     }
 }
+
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
+
 
 /* Footer */
