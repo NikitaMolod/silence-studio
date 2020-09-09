@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Silence Studio </title>
 </head>
 
 <body>
-    <div class="wrapper main">
+    <div class="wrapper main" id="app">
         <div class="header row between">
             <div class="logo column center pointer"><i class="fs35 white fab fa-apple"></i></div>
             <div class="header_section row between center ">
@@ -23,7 +24,8 @@
             </div>
             <div class="header_section_contacts  column center">
                 <div><a class="white bold fs12" href="tel:"><i class="fa fa-mobile-alt p5"></i>+9999999999999</a></div>
-                <div><a class="white bold fs12" href="mailto:"><i class="far fa-envelope p5"></i>Siltnce_Studio@info.com</a></div>
+                <div><a class="white bold fs12" href="mailto:"><i
+                            class="far fa-envelope p5"></i>Siltnce_Studio@info.com</a></div>
             </div>
             <div class="header_section_button center column">
                 <button class="p10 white"><i class="fal fa-comment-alt fs18 p5"></i>Обратная связь</button>
@@ -33,27 +35,43 @@
 
         <div class="meeting_block row " style="padding-top:100px">
             <div class="meeting_block_section  column around center">
-                <div class="tab  fs10 column center submain_text pointer"><i class="fal fa-file fs35"></i>Одностраничный сайт</div>
-                <div class="tab fs10 column center submain_text pointer"><i class="fal fa-file-alt fs35"></i> Лендинг</div>
-                <div class="tab fs10 column center submain_text pointer"><i class="fal fa-copy fs35"></i>Многостраничный сайт</div>
-                <div class="tab fs10 column center submain_text pointer"><i class="fal fa-shopping-bag fs35"></i>Магазин</div>
-
+                <div v-for="(tab,i) in tabs" :key="tab.title" :class="{active_tab:i===currentTab}" @click="currentTab=i"
+                    class="tab  fs10 column center  pointer">
+                    <i class="fal fs35" :class="`fa-${tab.icon}`"></i>
+                    <span>{{tab.title}}</span>
+                </div>
             </div>
             <div class="meeting_block_info column center white around ">
+                <transition name="fade" mode="out-in">
 
-                <div class="row"><img src="assets/ svg_black/001-landing-page-2.svg">
-                    <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный блог.
+                    <div class="row" key="0" v-if="currentTab===0"><img class="slideup" src="assets/ svg_black/001-landing-page-2.svg">
+                        <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение
+                            домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг.
+                            Дизайнерские логотипы. Откройте интернет-магазин. Персональный блог.
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный блог.
+                    <div class="row" key="1" v-if="currentTab===1">
+                        <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение
+                            домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг.
+                            Дизайнерские логотипы. Откройте интернет-магазин. Персональный блог.
+                        </div>
+                        <img class="p20 bounce" src="assets/ svg_black/002-landing-page-1.svg">
                     </div>
-                    <img class="p20" src="assets/ svg_black/002-landing-page-1.svg">
-                </div>
-                <div class="row"><img src="assets/ svg_black/003-browser-1.svg">
-                    <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный блог.
+                    <div class="row" key="2" v-if="currentTab===2"><img class="slidedown" src="assets/ svg_black/003-browser-1.svg">
+                        <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение
+                            домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг.
+                            Дизайнерские логотипы. Откройте интернет-магазин. Персональный блог.
+                        </div>
                     </div>
-                </div>
+                    <div class="row" key="3" v-if="currentTab===3">
+                        <div class="p20"> <div>Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение
+                            домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг.
+                            Дизайнерские логотипы. Откройте интернет-магазин. Персональный блог.
+                        </div>
+                            <img class="bounce p20" src="assets/ svg_black/008-web-design.svg">
+                        </div>
+                    </div>
+                </transition>
 
 
 
@@ -68,12 +86,22 @@
 
 
         <div class="description_occupation  row center around">
-            <div class="descrition_tabs center column pointer"><img src="assets/svg_consultation/001-operator.svg">Консультация <button class="submain_text p5">Подробнее</button><i class="p5 fal fa-hand-pointer"></i></div>
+            <div class="descrition_tabs center column pointer"><img
+                    src="assets/svg_consultation/001-operator.svg">Консультация <button
+                    class="submain_text p5">Подробнее</button></div>
 
-            <div class="descrition_tabs center column pointer"><img src="assets/svg_payment/001-credit-card.svg">Предоплата <button class="submain_text p5">Подробнее</button><i class="p5 fal fa-hand-pointer"></i></div>
-            <div class="descrition_tabs center column pointer"><img src="assets/svg_development/002-gamer.svg">Разработка <button class="submain_text p5">Подробнее</button><i class="p5 fal fa-hand-pointer"></i></div>
-            <div class="descrition_tabs center column pointer"><img src="assets/svg_edit/001-graphic-design-1.svg">Правки <button class="submain_text p5">Подробнее</button><i class="p5 fal fa-hand-pointer"></i></div>
-            <div class="descrition_tabs center column pointer"><img src="assets/svg_promotion/001-loudspeaker.svg">Продвижение <button class="submain_text p5">Подробнее</button><i class="p5 fal fa-hand-pointer"></i></div>
+            <div class="descrition_tabs center column pointer"><img
+                    src="assets/svg_payment/001-credit-card.svg">Предоплата <button
+                    class="submain_text p5">Подробнее</button></div>
+            <div class="descrition_tabs center column pointer"><img
+                    src="assets/svg_development/002-gamer.svg">Разработка <button
+                    class="submain_text p5">Подробнее</button></div>
+            <div class="descrition_tabs center column pointer"><img
+                    src="assets/svg_edit/001-graphic-design-1.svg">Правки <button
+                    class="submain_text p5">Подробнее</button></div>
+            <div class="descrition_tabs center column pointer"><img
+                    src="assets/svg_promotion/001-loudspeaker.svg">Продвижение <button
+                    class="submain_text p5">Подробнее</button></div>
 
         </div>
 
@@ -171,7 +199,7 @@
 
         </div>
     </div>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
