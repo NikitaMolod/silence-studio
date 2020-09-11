@@ -26,10 +26,11 @@
                 <div><a class=" bold fs12" href="mailto:"><i
                             class="far fa-envelope p5"></i>Siltnce_Studio@info.com</a></div>
             </div>
-            <div class="row center">
+            <div class="shop row center">
                 <button @click="remove"><i class="fal fa-shopping-cart"></i></button>
                 <span v-if="shopCount" style="position: absolute;color:white;background:#F44;border-radius:20px;width:15px;height:15px;font-size:10px;transform:translate(15px,-10px)">{{shopCount}}</span>
             </div>
+            <div></div>
             <div class="header_section_button center column">
                 <button class="p10 "><i class="fal fa-comment-alt fs18 p5"></i>Обратная связь</button>
             </div>
@@ -108,13 +109,22 @@
 
 
 
-        <div class="description_occupation  row center around">
-            <div class="descrition_tabs center column pointer"><img src="assets/svg_consultation/001-operator.svg">Консультация <button class="submain_text p5">Подробнее</button></div>
-
-            <div class="descrition_tabs center column pointer"><img src="assets/svg_payment/001-credit-card.svg">Предоплата <button class="submain_text p5">Подробнее</button></div>
-            <div class="descrition_tabs center column pointer"><img src="assets/svg_development/002-gamer.svg">Разработка <button class="submain_text p5">Подробнее</button></div>
-            <div class="descrition_tabs center column pointer"><img src="assets/svg_edit/001-graphic-design-1.svg">Правки <button class="submain_text p5">Подробнее</button></div>
-            <div class="descrition_tabs center column pointer"><img src="assets/svg_promotion/001-loudspeaker.svg">Продвижение <button class="submain_text p5">Подробнее</button></div>
+        <div class="description_occupation  column center around">
+            <span class="center fs35 main_text">Этапы работы</span>
+            <div class="row center around" @click.self="steps.forEach(el=>el.active=false)" style="width:100%">
+                <div v-for="step in steps" :key="step.title" @click="step.active=!step.active" :class="{flip:step.active}" class="descrition_tabs center column pointer">
+                    <transition name="fade" mode="out-in">
+                        <div class="column center" key="active" v-if="!step.active">
+                            <img :src="step.icon">
+                            <span>{{step.title}}</span>
+                            <button class="submain_text p5">Подробнее</button>
+                        </div>
+                        <div v-else key="unactive" style="transform: scale(-1,1);font-size:10px;line-height:1.7;padding:10px">
+                            {{step.description}}
+                        </div>
+                    </transition>
+                </div>
+            </div>
 
         </div>
 
