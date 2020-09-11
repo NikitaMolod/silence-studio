@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>Silence Studio </title>
@@ -114,7 +114,7 @@
 
 
 
-        <div class="description_occupation  column center around">
+        <div class="description_occupation  column center around" @click.self="steps.forEach(el=>el.active=false)">
             <span class="center fs35 main_text">Этапы работы</span>
             <div class="row center around" @click.self="steps.forEach(el=>el.active=false)" style="width:100%">
                 <div v-for="step in steps" :key="step.title" @click="step.active=!step.active" :class="{flip:step.active}" class="descrition_tabs center column pointer">
@@ -122,7 +122,7 @@
                         <div class="column center" key="active" v-if="!step.active">
                             <img :src="step.icon">
                             <span>{{step.title}}</span>
-                            <button class="submain_text p5">Подробнее</button>
+                            <button class="p5 no_border">Подробнее</button>
                         </div>
                         <div v-else key="unactive" style="transform: scale(-1,1);font-size:10px;line-height:1.7;padding:10px">
                             {{step.description}}
@@ -135,7 +135,30 @@
 
 
 
+        <div class="column center p20">
+            <span class="main_text fs35 bold500">Проектирование</span>
+            <span class="submain_text fs24 mt10">Как оно происходит?</span>
+            <div class="row center around mt25 project">
+                <div class="column center project_block">
+                    <i class="fal fa-diamond fs35"></i>
+                    <span class="main_text mt25 fs35">Идея</span>
+                    <span class="helper_text mt10">Все начинается с идеи. Я взаимодействую с клиентом и коллегами, чтобы воплотить идею в продуманное дизайнерское решение. В конце концов одно из самых важных частей сайта это продуманный пользовательский интерфейс.</span>
+                </div>
+                <div class="column center project_block">
+                    <i class="fal fa-layer-group fs35"></i>
+                    <span class="main_text mt25 fs35">UI/UX</span>
+                    <span class="helper_text mt10">Все начинается с идеи. Я взаимодействую с клиентом и коллегами, чтобы воплотить идею в продуманное дизайнерское решение. В конце концов одно из самых важных частей сайта это продуманный пользовательский интерфейс.</span>
+                </div>
+                <div class="column center project_block">
+                    <i class="fal fa-desktop fs35"></i>
+                    <span class="main_text mt25 fs35">Идея</span>
+                    <span class="helper_text mt10">Все начинается с идеи. Я взаимодействую с клиентом и коллегами, чтобы воплотить идею в продуманное дизайнерское решение. В конце концов одно из самых важных частей сайта это продуманный пользовательский интерфейс.</span>
+                </div>
 
+
+            </div>
+
+        </div>
 
         <div class="website_builder"></div>
 
