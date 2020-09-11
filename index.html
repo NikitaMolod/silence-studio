@@ -13,7 +13,7 @@
 
 <body>
     <div class="wrapper main" id="app">
-        <div class="header row between white" :class="{white_header:scrollFromTop>0}">
+        <div class="header row between white" :class="{white_header:scrollFromTop>30}">
             <div class="logo column center pointer"><i class="fs35  fab fa-apple"></i></div>
             <transition name="pop">
                 <div class="menu row center" v-if="windowWidth>580||menuOpen">
@@ -40,73 +40,85 @@
             <button @click="menuOpen=!menuOpen" class="menu_button fs24 no_border"><i class="fal fa-bars"></i></button>
 
         </div>
-
-
-        <div class="meeting_block row " style="padding-top:100px">
-            <div class="meeting_block_section  column around center">
-                <div v-for="(tab,i) in tabs" :key="tab.title" :class="{active_tab:i===currentTab}" @click="currentTab=i" class="tab  fs10 column center  pointer">
-                    <i class="fal fs35" :class="`fa-${tab.icon}`"></i>
-                    <span>{{tab.title}}</span>
+        <div class="main" style="padding-top:100px">
+            <div class="welcome column center">
+                <div style="transform: translate(0,-50px)">
+                    <span class="fs35 white bold500 ">Создаём красивые сайты</span>
+                    <span class="fs24 white bold300 mt10 fade" style="opacity:0">Большой опыт и портфолио</span>
                 </div>
+                <div ref="meeting" class="down_button fade delay2 no_border" @click="$refs.meeting.scrollIntoView({behavior: 'smooth'})">
+                    <span class="fs12 white bold100">Подробнее</span>
+                    <br/>
+                    <i class="fal fa-arrow-down fs35 white"></i>
+                </div>
+
             </div>
-            <div class="meeting_block_info column center white around ">
-                <transition name="fade" mode="out-in">
-                    <div key="0" v-if="currentTab===0">
-                        <div class="row"><img class="slideup" src="assets/ svg_black/001-landing-page-2.svg">
-                            <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный
-                                блог.
-                            </div>
-
-                        </div>
-                        <div>
-                            <button @click="add('one')" class="p20">добавить в корзину</button>
-                        </div>
+            <div class="meeting_block row ">
+                <div class="meeting_block_section  column around center">
+                    <div v-for="(tab,i) in tabs" :key="tab.title" :class="{active_tab:i===currentTab}" @click="currentTab=i" class="tab  fs10 column center  pointer">
+                        <i class="fal fs35" :class="`fa-${tab.icon}`"></i>
+                        <span>{{tab.title}}</span>
                     </div>
-                    <div key="1" v-if="currentTab===1">
-                        <div class="row">
-                            <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный
-                                блог.
-                            </div>
-                            <img class="p20 bounce" src="assets/ svg_black/002-landing-page-1.svg">
-
-                        </div>
-                        <div>
-                            <button @click="add('landing')" class="p20">добавить в корзину</button>
-                        </div>
-                    </div>
-                    <div key="2" v-if="currentTab===2">
-                        <div class="row"><img class="slidedown" src="assets/ svg_black/003-browser-1.svg">
-                            <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный
-                                блог.
-                            </div>
-
-                        </div>
-                        <div>
-                            <button @click="add('many')" class="p20">добавить в корзину</button>
-                        </div>
-                    </div>
-                    <div key="3" v-if="currentTab===3">
-                        <div class="row">
-                            <div class="p20">
-                                <div>Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный
+                </div>
+                <div class="meeting_block_info column center white around ">
+                    <transition name="fade" mode="out-in">
+                        <div key="0" v-if="currentTab===0">
+                            <div class="row"><img class="slideup" src="assets/ svg_black/001-landing-page-2.svg">
+                                <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный
                                     блог.
                                 </div>
-                                <img class="bounce p20" src="assets/ svg_black/008-web-design.svg">
-
 
                             </div>
+                            <div>
+                                <button @click="add('one')" class="p20">добавить в корзину</button>
+                            </div>
                         </div>
-                        <div>
-                            <button @click="add('shop')" class="p20">добавить в корзину</button>
+                        <div key="1" v-if="currentTab===1">
+                            <div class="row">
+                                <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный
+                                    блог.
+                                </div>
+                                <img class="p20 bounce" src="assets/ svg_black/002-landing-page-1.svg">
+
+                            </div>
+                            <div>
+                                <button @click="add('landing')" class="p20">добавить в корзину</button>
+                            </div>
                         </div>
-                    </div>
-                </transition>
+                        <div key="2" v-if="currentTab===2">
+                            <div class="row"><img class="slidedown" src="assets/ svg_black/003-browser-1.svg">
+                                <div class="p20">Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин. Персональный
+                                    блог.
+                                </div>
+
+                            </div>
+                            <div>
+                                <button @click="add('many')" class="p20">добавить в корзину</button>
+                            </div>
+                        </div>
+                        <div key="3" v-if="currentTab===3">
+                            <div class="row">
+                                <div class="p20">
+                                    <div>Сотни шаблонов для сайтов-визиток. Создай сайт-визитку за 5 минут! Подключение домена. Мобильная оптимизация. Дизайнерские шаблоны. Поддержка 24/7. Надежный хостинг. Дизайнерские логотипы. Откройте интернет-магазин.
+                                        Персональный блог.
+                                    </div>
+                                    <img class="bounce p20" src="assets/ svg_black/008-web-design.svg">
+
+
+                                </div>
+                            </div>
+                            <div>
+                                <button @click="add('shop')" class="p20">добавить в корзину</button>
+                            </div>
+                        </div>
+                    </transition>
 
 
 
 
 
 
+                </div>
             </div>
         </div>
 
