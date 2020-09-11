@@ -162,6 +162,10 @@ button:focus {
     outline: 0px;
 }
 
+.no_border {
+    border: 1px solid transparent;
+}
+
 
 /* Link */
 
@@ -186,16 +190,24 @@ button:focus {
     width: 15%;
 }
 
+.menu {
+    width: 80%;
+}
+
 .header_section {
-    width: 40%;
+    width: 60%;
 }
 
 .header_section_contacts {
-    width: 15%;
+    width: 20%;
 }
 
 .header_section_button {
-    width: 25%;
+    width: 20%;
+}
+
+.menu_button {
+    display: none;
 }
 
 
@@ -246,6 +258,17 @@ button:focus {
 .fade-leave-to {
     opacity: 0;
     transform: translate(-100px, 0px);
+}
+
+.pop-enter-active,
+.pop-leave-active {
+    transition: all .1s ease-out;
+}
+
+.pop-enter,
+.pop-leave-to {
+    opacity: 0;
+    transform: translate(100px, 0px);
 }
 
 .active_tab {
@@ -440,11 +463,41 @@ button:focus {
         flex-direction: row;
         width: 100%;
     }
+    .menu {
+        position: fixed;
+        flex-direction: column;
+        padding: 20px;
+        background: rgba(0, 0, 0, .6);
+        border-radius: 5px;
+        top: 50px;
+        width: auto;
+        right: 10px;
+        color: white !important;
+    }
     .header_section,
-    .header_section_button,
     .header_section_contacts,
+    .header_section_button {
+        flex-direction: column;
+        width: 100%;
+    }
+    .header_section>div,
+    .header_section_contacts>div {
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        width: 100%;
+    }
+    .header_section>div:active,
+    .header_section_contacts>div:active {
+        cursor: pointer;
+        transition: all .3s ease;
+        box-shadow: inset 0 0 0 3em white;
+        color: #333;
+    }
+    .menu_button {
+        display: block;
+    }
     .shop {
-        display: none;
+        margin: 20px;
     }
     .header.between {
         justify-content: space-around;

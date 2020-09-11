@@ -6,6 +6,8 @@ new Vue({
         interval: '',
         scrollFromTop: 0,
         shopCount: 0,
+        windowWidth: 0,
+        menuOpen: false,
         tabs: [
             { title: 'Одностраничный сайт', icon: 'file' },
             { title: 'Лендинг', icon: 'file-alt' },
@@ -48,6 +50,7 @@ new Vue({
         this.startInterval();
         window.addEventListener('scroll', this.scrollHandler);
         this.add();
+        this.windowWidth = window.innerWidth;
     },
     watch: {
         currentTab() {

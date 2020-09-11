@@ -15,25 +15,30 @@
     <div class="wrapper main" id="app">
         <div class="header row between white" :class="{white_header:scrollFromTop>0}">
             <div class="logo column center pointer"><i class="fs35  fab fa-apple"></i></div>
-            <div class="header_section row between center ">
-                <div><a href="#">Главная</a></div>
-                <div><a href="#">Услуги</a></div>
-                <div><a href="#">Наши проекты</a></div>
-                <div><a href="#">О нас</a></div>
-            </div>
-            <div class="header_section_contacts  column center">
-                <div><a class=" bold fs12" href="tel:"><i class="fa fa-mobile-alt p5"></i>+9999999999999</a></div>
-                <div><a class=" bold fs12" href="mailto:"><i
+            <transition name="pop">
+                <div class="menu row center" v-if="windowWidth>580||menuOpen">
+                    <div class="header_section row between center ">
+                        <div><a href="#">Главная</a></div>
+                        <div><a href="#">Услуги</a></div>
+                        <div><a href="#">Наши проекты</a></div>
+                        <div><a href="#">О нас</a></div>
+                    </div>
+                    <div class="header_section_contacts  column center">
+                        <div><a class=" bold fs12" href="tel:"><i class="fa fa-mobile-alt p5"></i>+9999999999999</a></div>
+                        <div><a class=" bold fs12" href="mailto:"><i
                             class="far fa-envelope p5"></i>Siltnce_Studio@info.com</a></div>
-            </div>
-            <div class="shop row center">
-                <button @click="remove"><i class="fal fa-shopping-cart"></i></button>
-                <span v-if="shopCount" style="position: absolute;color:white;background:#F44;border-radius:20px;width:15px;height:15px;font-size:10px;transform:translate(15px,-10px)">{{shopCount}}</span>
-            </div>
-            <div></div>
-            <div class="header_section_button center column">
-                <button class="p10 "><i class="fal fa-comment-alt fs18 p5"></i>Обратная связь</button>
-            </div>
+                    </div>
+                    <div class="shop row center">
+                        <button @click="remove" class="no_border"><i class="fal fa-shopping-cart fs24"></i></button>
+                        <span v-if="shopCount" style="position: absolute;color:white;background:#F44;border-radius:20px;width:15px;height:15px;font-size:10px;transform:translate(15px,-10px)">{{shopCount}}</span>
+                    </div>
+                    <div class="header_section_button center column">
+                        <button class="p10 "><i class="fal fa-comment-alt fs18 p5"></i>Обратная связь</button>
+                    </div>
+                </div>
+            </transition>
+            <button @click="menuOpen=!menuOpen" class="menu_button fs24 no_border"><i class="fal fa-bars"></i></button>
+
         </div>
 
 
