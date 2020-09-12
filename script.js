@@ -30,7 +30,14 @@ new Vue({
         activeIcon: 'warehouse-alt',
         icons: [
             "adjust", "album", "bahai", "bags-shopping"
-        ]
+        ],
+        websiteMiniTabs: [
+            "Главная", "О нас"
+
+        ],
+        refresh: false,
+
+
 
     },
     methods: {
@@ -43,6 +50,14 @@ new Vue({
         },
         scrollHandler(e) {
             this.scrollFromTop = window.scrollY
+        },
+        doRefresh() {
+            this.refresh = true;
+            setTimeout(() => this.refresh = false, 1500)
+            this.pagesOn = false;
+            this.shopOn = false;
+            this.socialOn = false;
+            this.gradientOn = false;
         },
         add(site) {
             let sites = localStorage.getItem('sites');

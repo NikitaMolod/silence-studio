@@ -213,15 +213,15 @@
                             <button class="orange_dot"></button>
                             <button class="green_dot"></button>
                         </div>
-                        <div class="website_search row center between fs12 white"><i class="fal fa-lock"></i>{{siteName.slice(0,20)}}.com<i class="fal fa-redo"></i></div>
-                        <div class="website_plus"><i class="fal fa-plus white"></i></div>
+                        <div class="website_search row center between fs12 white"><i class="fal fa-lock"></i>{{siteName.slice(0,20)}}.com<span @click="doRefresh" class="pointer"><i class="fal fa-redo"></i></span></div>
+                        <div @click="websiteMiniTabs.push('Новая вкладка')" class="website_plus pointer"><i class="fal fa-plus white"></i></div>
 
                     </div>
                     <div :style="{height:pagesOn ? '20px' : '0px'}" class="website_tabs row">
-                        <div class="website_tab fs10 white row center">Main</div>
-                        <div class="website_tab fs10 white row center">Other</div>
+                        <div v-for="tab in websiteMiniTabs.slice(0,5)" class="website_tab fs10 white row center">{{tab}}</div>
+
                     </div>
-                    <div class="website_wrapper">
+                    <div class="website_wrapper" :style="{opacity:refresh?0:1}">
                         <div class="website_wrapper_header row center between white">
                             <div style="width: 50px;"><i :class=" 'fal fa-'+activeIcon"></i></div>
                             <transition name="fade" mode="out-in">
@@ -242,11 +242,11 @@
                         </div>
 
                     </div>
-                    <div class="website_wrapper_main column center white">
+                    <div :style="{opacity:refresh?0:1}" class="website_wrapper_main column center white">
                         <div>{{titleName}}</div>
 
                     </div>
-                    <div class="white fs24 row between">
+                    <div :style="{opacity:refresh?0:1}" class="white fs24 row between">
                         <div>
                             <transition name="fade"> <i v-if="socialOn" class="fal fa-globe p5"></i></transition>
                             <transition name="fade"><i v-if="socialOn" class="fab fa-facebook-f p5"></i></transition>
@@ -279,19 +279,31 @@
 
 
 
-        <div class="about_specialists">
+        <div class="about_specialists column center p50">
+            <span class="center bold700 fs24 main_text">Наши специалисты</span>
             <div class="wrapper_specialists row center">
-                <div class="specialists"></div>
-                <div class="specialist_info"></div>
+                <div class="specialists ">
+                    <img src="assets/svg_consultation/007-talking.svg">
+                </div>
+                <div class="specialist_info row center ">
+                    Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который можно будет включить
+                    в свое резюме. Основное преимущество нашего центра — в реальном опыте работы. Мы создали сотни сайтов и точно знаем о нюансах, которые могут возникнуть в процессе разработки. Все, чему учим на курсах, используем каждый день.
+                </div>
             </div>
-            <div class="wrapper_specialists row center">
-                <div class="specialist_info"></div>
-                <div class="specialists"></div>
+            <div class="wrapper_specialists row center reverse">
+                <div class="specialist_info">Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который
+                    можно будет включить в свое резюме. Основное преимущество нашего центра — в реальном опыте работы. Мы создали сотни сайтов и точно знаем о нюансах, которые могут возникнуть в процессе разработки. Все, чему учим на курсах, используем
+                    каждый день.
+
+                </div>
+                <div class="specialists"><img src="assets/svg_development/002-gamer.svg"></div>
 
             </div>
             <div class="wrapper_specialists row center">
-                <div class="specialists"></div>
-                <div class="specialist_info"></div>
+                <div class="specialists"><img src="assets/svg_promotion/006-advertisement.svg"></div>
+                <div class="specialist_info">Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который
+                    можно будет включить в свое резюме. Основное преимущество нашего центра — в реальном опыте работы. Мы создали сотни сайтов и точно знаем о нюансах, которые могут возникнуть в процессе разработки. Все, чему учим на курсах, используем
+                    каждый день.</div>
             </div>
         </div>
 
