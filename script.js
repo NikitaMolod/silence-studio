@@ -20,7 +20,18 @@ new Vue({
             { icon: 'assets/svg_development/002-gamer.svg', title: 'Разработка', description: 'sample text', active: false },
             { icon: 'assets/svg_edit/001-graphic-design-1.svg', title: 'Правки', description: 'sample text', active: false },
             { icon: 'assets/svg_promotion/001-loudspeaker.svg', title: 'Продвижение', description: 'sample text', active: false },
+        ],
+        siteName: "PerfectSite",
+        titleName: "Создай свой уникальный сайт",
+        pagesOn: false,
+        shopOn: false,
+        socialOn: false,
+        gradientOn: false,
+        activeIcon: 'warehouse-alt',
+        icons: [
+            "adjust", "album", "bahai", "bags-shopping"
         ]
+
     },
     methods: {
         startInterval() {

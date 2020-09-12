@@ -17,7 +17,7 @@
             <div class="logo column center pointer"><i class="fs35  fab fa-apple"></i></div>
             <transition name="pop">
                 <div class="menu row center" v-if="windowWidth>580||menuOpen">
-                    <div class="header_section row between center fs12 ">
+                    <div class="header_section row between center fs12">
                         <div><a @click="check" href="#">Главная</a></div>
                         <div><a href="#">Услуги</a></div>
                         <div><a href="#">Наши проекты</a></div>
@@ -33,7 +33,7 @@
                         <span v-if="shopCount" style="position: absolute;color:white;background:#F44;border-radius:20px;width:15px;height:15px;font-size:10px;transform:translate(15px,-10px)">{{shopCount}}</span>
                     </div>
                     <div class="header_section_button center column">
-                        <button class="p10 "><i class="fal fa-comment-alt fs18 p5"></i>Обратная связь</button>
+                        <button class="p10"><i class="fal fa-comment-alt fs18 p5"></i>Обратная связь</button>
                     </div>
                 </div>
             </transition>
@@ -43,7 +43,7 @@
         <div class="main" style="padding-top:100px">
             <div class="welcome column center">
                 <div style="transform: translate(0,-50px)">
-                    <span class="fs35 white bold500 ">Создаём красивые сайты</span>
+                    <span class="fs35 white bold500">Создаём красивые сайты</span>
                     <span class="fs24 white bold300 mt10 fade" style="opacity:0">Большой опыт и портфолио</span>
                 </div>
                 <div ref="meeting" class="down_button fade delay2 no_border" @click="$refs.meeting.scrollIntoView({behavior: 'smooth'})">
@@ -53,14 +53,14 @@
                 </div>
 
             </div>
-            <div class="meeting_block row ">
+            <div class="meeting_block row">
                 <div class="meeting_block_section  column around center">
                     <div v-for="(tab,i) in tabs" :key="tab.title" :class="{active_tab:i===currentTab}" @click="currentTab=i" class="tab  fs10 column center  pointer">
                         <i class="fal fs35" :class="`fa-${tab.icon}`"></i>
                         <span>{{tab.title}}</span>
                     </div>
                 </div>
-                <div class="meeting_block_info column center white around ">
+                <div class="meeting_block_info column center white around">
                     <transition name="fade" mode="out-in">
                         <div key="0" v-if="currentTab===0">
                             <div class="row"><img class="slideup" src="assets/ svg_black/001-landing-page-2.svg">
@@ -172,7 +172,102 @@
 
         </div>
 
-        <div class="website_builder"></div>
+        <div class="website_builder column center p20">
+            <span class="fs35 main_text white p50 bold500">Просчитайте результат</span>
+
+            <div style="width: 100%;" class=" row around">
+                <div class="website_inputs column center around">
+                    <span class="white bold600 fs14">Придумай название</span>
+                    <input class="website_input" v-model="siteName">
+                    <span class="white bold600 fs14">Введи информация</span>
+                    <input class="website_input" v-model=" titleName">
+                    <span class="white bold600 fs14">Создать вам логотип?</span>
+                    <div class="row center white no_border"><button class="fs24 no_border" style="margin:5px;" v-for="icon in icons" @click="activeIcon=icon"><i :class=" 'fal fa-'+icon"></i></button></div>
+                    <span class="row white fs10 bold500" style="word-spacing: 2px;">Мультистраничный Комерция SEO/SMM Дизайн</span>
+                    <div class="row center">
+
+                        <label>
+                    <input class="website_checkbox" v-model="pagesOn" type="checkbox">
+                    <i class="fal fa-copy"></i>
+                </label>
+                        <label>
+                        <input class="website_checkbox" v-model="shopOn" type="checkbox">
+                        <i class="fal fa-shopping-bag"></i>
+                    </label>
+                        <label>
+                        <input class="website_checkbox" v-model="socialOn" type="checkbox">
+                        <i class="fal fa-thumbs-up"></i>
+                    </label>
+                        <label>
+                        <input class="website_checkbox" v-model="gradientOn" type="checkbox">
+                        <i class="fal fa-paint-brush"></i>
+                    </label>
+                    </div>
+
+                </div>
+
+                <div class="website_main" :class="{gradient_website:gradientOn}">
+                    <div class="website_header row p5 center between">
+                        <div class="row">
+                            <button class="red_dot"></button>
+                            <button class="orange_dot"></button>
+                            <button class="green_dot"></button>
+                        </div>
+                        <div class="website_search row center between fs12 white"><i class="fal fa-lock"></i>{{siteName.slice(0,20)}}.com<i class="fal fa-redo"></i></div>
+                        <div class="website_plus"><i class="fal fa-plus white"></i></div>
+
+                    </div>
+                    <div :style="{height:pagesOn ? '20px' : '0px'}" class="website_tabs row">
+                        <div class="website_tab fs10 white row center">Main</div>
+                        <div class="website_tab fs10 white row center">Other</div>
+                    </div>
+                    <div class="website_wrapper">
+                        <div class="website_wrapper_header row center between white">
+                            <div style="width: 50px;"><i :class=" 'fal fa-'+activeIcon"></i></div>
+                            <transition name="fade" mode="out-in">
+                                <div style="width: 80px;" key="k" v-if="pagesOn">
+                                    <i class="fad fa-grip-lines"></i>
+                                    <i class="fad fa-grip-lines"></i>
+                                    <i class="fad fa-grip-lines"></i>
+                                </div>
+                                <div key="f" v-else>
+                                    {{siteName}}
+                                </div>
+                            </transition>
+
+
+                            <div style="width: 40px;">
+                                <transition name="fade"><i v-if="shopOn" class="fa fa-shopping-cart"></i></transition>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="website_wrapper_main column center white">
+                        <div>{{titleName}}</div>
+
+                    </div>
+                    <div class="white fs24 row between">
+                        <div>
+                            <transition name="fade"> <i v-if="socialOn" class="fal fa-globe p5"></i></transition>
+                            <transition name="fade"><i v-if="socialOn" class="fab fa-facebook-f p5"></i></transition>
+                            <transition name="fade"><i v-if="socialOn" class=" fab fa-instagram p5"></i></transition>
+                            <transition name="fade"><i v-if="socialOn" class=" fab fa-google p5"></i></transition>
+
+
+
+                        </div>
+
+                        <div>
+                            <transition name="fade"><i v-if="shopOn" class="fab fa-cc-mastercard p5"></i></transition>
+                            <transition name="fade"><i v-if="shopOn" class="fab fa-cc-visa p5"></i></transition>
+                            <transition name="fade"><i v-if="shopOn" class="fab fa-cc-apple-pay p5"></i></transition>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
 
 
 
@@ -185,16 +280,16 @@
 
 
         <div class="about_specialists">
-            <div class="wrapper_specialists  row center">
+            <div class="wrapper_specialists row center">
                 <div class="specialists"></div>
                 <div class="specialist_info"></div>
             </div>
-            <div class="wrapper_specialists  row center">
+            <div class="wrapper_specialists row center">
                 <div class="specialist_info"></div>
                 <div class="specialists"></div>
 
             </div>
-            <div class="wrapper_specialists  row center">
+            <div class="wrapper_specialists row center">
                 <div class="specialists"></div>
                 <div class="specialist_info"></div>
             </div>
@@ -204,14 +299,14 @@
 
 
 
-        <div class="advantages  row around">
+        <div class="advantages row around">
 
             <div class="advantages_info">
                 <div>Скорость</div>
                 <div>Качество</div>
                 <div>Цена</div>
             </div>
-            <div class="advantages_info  column center">
+            <div class="advantages_info column center">
                 <div class="advantages_circle">Наши достоинства</div>
             </div>
             <div class="advantages_info">
@@ -227,7 +322,7 @@
 
 
 
-        <!-- <div class="feedback  ">
+        <!-- <div class="feedback">
             <div class="feedback_info"></div>
             <div class="feedback_form column">
                 <form class=" center row">
@@ -242,12 +337,12 @@
 
 
 
-        <div class="footer  row">
+        <div class="footer row">
             <div class="footer_logo">
 
 
             </div>
-            <div class="central_footer  column center">
+            <div class="central_footer column center">
                 <div>Главная</div>
                 <div>Услуги</div>
                 <div>Наши проекты</div>
