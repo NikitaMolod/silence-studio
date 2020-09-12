@@ -12,20 +12,20 @@
 </head>
 
 <body>
-    <div class="wrapper main" id="app">
+    <div class="wrapper" id="app">
         <div class="header row between white" :class="{white_header:scrollFromTop>30}">
             <div class="logo column center pointer"><i class="fs35  fab fa-apple"></i></div>
             <transition name="pop">
                 <div class="menu row center" v-if="windowWidth>580||menuOpen">
-                    <div class="header_section row between center ">
-                        <div><a href="#">Главная</a></div>
+                    <div class="header_section row between center fs12 ">
+                        <div><a @click="check" href="#">Главная</a></div>
                         <div><a href="#">Услуги</a></div>
                         <div><a href="#">Наши проекты</a></div>
                         <div><a href="#">О нас</a></div>
                     </div>
                     <div class="header_section_contacts  column center">
-                        <div><a class=" bold fs12" href="tel:"><i class="fa fa-mobile-alt p5"></i>+9999999999999</a></div>
-                        <div><a class=" bold fs12" href="mailto:"><i
+                        <div><a class=" bold600 fs12" href="tel:"><i class="fa fa-mobile-alt p5"></i>+9999999999999</a></div>
+                        <div><a class=" bold600 fs12" href="mailto:"><i
                             class="far fa-envelope p5"></i>Siltnce_Studio@info.com</a></div>
                     </div>
                     <div class="shop row center">
@@ -47,9 +47,9 @@
                     <span class="fs24 white bold300 mt10 fade" style="opacity:0">Большой опыт и портфолио</span>
                 </div>
                 <div ref="meeting" class="down_button fade delay2 no_border" @click="$refs.meeting.scrollIntoView({behavior: 'smooth'})">
-                    <span class="fs12 white bold100">Подробнее</span>
+                    <span class="fs12 white bold300">Подробнее</span>
                     <br/>
-                    <i class="fal fa-arrow-down fs35 white"></i>
+                    <i class="fal fa-angle-down fs35 white slideup"></i>
                 </div>
 
             </div>

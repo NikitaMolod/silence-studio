@@ -44,6 +44,9 @@ new Vue({
         remove() {
             localStorage.removeItem('sites')
             this.add()
+        },
+        check() {
+            console.log(this.$route)
         }
     },
     created() {
