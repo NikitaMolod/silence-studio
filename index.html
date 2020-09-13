@@ -127,7 +127,7 @@
 
 
         <div class="description_occupation  column center around" @click.self="steps.forEach(el=>el.active=false)">
-            <span class="center fs35 main_text">Этапы работы</span>
+            <span class="main_text fs35 bold500 center">Этапы работы</span>
             <div class="row center around" @click.self="steps.forEach(el=>el.active=false)" style="width:100%">
                 <div v-for="step in steps" :key="step.title" @click="step.active=!step.active" :class="{flip:step.active}" class="descrition_tabs center column pointer">
                     <transition name="fade" mode="out-in">
@@ -147,8 +147,8 @@
 
 
 
-        <div class="column center p20">
-            <span class="main_text fs35 bold500">Проектирование</span>
+        <div class="column center ">
+            <span class="main_text fs35 bold500 mt50">Проектирование</span>
             <span class="submain_text fs24 mt10">Как оно происходит?</span>
             <div class="row center around mt25 project">
                 <div class="column center project_block">
@@ -183,25 +183,38 @@
                     <input class="website_input" v-model=" titleName">
                     <span class="white bold600 fs14">Создать вам логотип?</span>
                     <div class="row center white no_border"><button class="fs24 no_border" style="margin:5px;" v-for="icon in icons" @click="activeIcon=icon"><i :class=" 'fal fa-'+icon"></i></button></div>
-                    <span class="row white fs10 bold500" style="word-spacing: 2px;">Мультистраничный Комерция SEO/SMM Дизайн</span>
-                    <div class="row center">
+                    <span class="white bold600 fs14">Опции</span>
+                    <div class="wrapper_checkbox row center around mt10">
 
-                        <label>
+
+                        <div class="column center"> <label>
                     <input class="website_checkbox" v-model="pagesOn" type="checkbox">
                     <i class="fal fa-copy"></i>
+                    
                 </label>
-                        <label>
+                            <span class="row white fs10 bold500" style="word-spacing: 2px;">Многостраничный</span>
+                        </div>
+                        <div class="column center">
+                            <label>
                         <input class="website_checkbox" v-model="shopOn" type="checkbox">
                         <i class="fal fa-shopping-bag"></i>
                     </label>
-                        <label>
+                            <span class="row white fs10 bold500" style="word-spacing: 2px;">Коммерция</span>
+                        </div>
+                        <div class="column center">
+                            <label>
                         <input class="website_checkbox" v-model="socialOn" type="checkbox">
                         <i class="fal fa-thumbs-up"></i>
                     </label>
-                        <label>
+                            <span class="row white fs10 bold500" style="word-spacing: 2px;">SEO/SMM</span>
+                        </div>
+                        <div class="column center">
+                            <label>
                         <input class="website_checkbox" v-model="gradientOn" type="checkbox">
                         <i class="fal fa-paint-brush"></i>
                     </label>
+                            <span class="row white fs10 bold500" style="word-spacing: 2px;">Дизайн</span>
+                        </div>
                     </div>
 
                 </div>
@@ -264,6 +277,17 @@
                         </div>
                     </div>
 
+
+                </div>
+                <div class="column center p10  between feedback_wrapper">
+                    <div>
+                        <span class="white bold600 fs14 mt10">Ваши пожелания</span>
+                        <div class=""><textarea placeholder="Опишите ваш проект" class="website_input mt10"></textarea></div>
+                        <span class="white bold600 fs14 mt10">Контактная информация</span>
+                        <input type="text" class="website_input mt10" placeholder="Введите ваши контакты ">
+                    </div>
+                    <span class="white bold700 fs24 mt10">~ 350 USD</span>
+                    <button class="p20 white">Отправизть заявку</button>
                 </div>
             </div>
 
@@ -272,36 +296,106 @@
 
 
 
+        <div class="column center">
+            <span class="bold500 main_text fs35 mt50">Наши работы</span>
+            <div class="work_partners row wrap center">
 
-        <div class="work_partners"></div>
+                <div class=" column center ">
+
+                    <div class=" row center">
+                        <div class="desktop_wrapper"><img class="desktop" src="assets/macbook_PNG59.png">
+                            <img class="desktop_screen" src="assets/screenshots/autocash desc.png"></div>
+                        <div class="mobile_wrapper"><img class="mobile" src="assets/X.png">
+                            <img class="mobile_screen" src="assets/screenshots/autocash mob.png"></div>
+                    </div>
+                    <span class="fs14 bold500 main_text">Autocash</span>
+                    <span class="fs12 bold300 submain_text mt10">Сайт по продаже авто продукции</span>
+                    <button class="fs12 main_text bold500 mt10">Посмотреть<i class="fal fa-arrow-up"></i></button>
+
+
+                </div>
+                <div class="column center ">
+                    <div class="row center">
+                        <div class="desktop_wrapper"><img class="desktop" src="assets/macbook_PNG59.png">
+                            <img class="desktop_screen" src="assets/screenshots/azara des.png"></div>
+                        <div class="mobile_wrapper"><img class="mobile" src="assets/X.png">
+                            <img class="mobile_screen" src="assets/screenshots/azara mob.png"></div>
+
+                    </div>
+                    <span class="fs14 bold500 main_text">AZARA</span>
+                    <span class="fs12 bold300 submain_text mt10">Онлайн кошелек криптовалют</span>
+                    <button class="fs12 main_text bold500 mt10">Посмотреть<i class="fal fa-arrow-up"></i></button>
+
+                </div>
+                <div class="column center">
+                    <div class="row center">
+                        <div class="desktop_wrapper"><img class="desktop" src="assets/macbook_PNG59.png">
+                            <img class="desktop_screen" src="assets/screenshots/boxex des.png"></div>
+                        <div class="mobile_wrapper"><img class="mobile" src="assets/X.png">
+                            <img class="mobile_screen" src="assets/screenshots/boxex mob.png"></div>
+
+                    </div>
+                    <span class="fs14 bold500 main_text">Boxexchanger</span>
+                    <span class="fs12 bold300 submain_text mt10">Онлайн обменник криптовалют</span>
+                    <button class="fs12 main_text bold500 mt10">Посмотреть<i class="fal fa-arrow-up"></i></button>
+
+                </div>
+                <div class="column center">
+                    <div class="row center">
+                        <div class="desktop_wrapper"><img class="desktop" src="assets/macbook_PNG59.png">
+                            <img class="desktop_screen" src="assets/screenshots/pedro des.png"></div>
+                        <div class="mobile_wrapper"><img class="mobile" src="assets/X.png">
+                            <img class="mobile_screen" src="assets/screenshots/pedro mob.png"></div>
+
+                    </div>
+                    <span class="fs14 bold500 main_text">AZARA</span>
+                    <span class="fs12 bold300 submain_text mt10">Онлайн кошелек криптовалют</span>
+                    <button class="fs12 main_text bold500 mt10">Посмотреть<i class="fal fa-arrow-up"></i></button>
+
+                </div>
+                <div class="column center">
+                    <div class="row center">
+                        <div class="desktop_wrapper"><img class="desktop" src="assets/macbook_PNG59.png">
+                            <img class="desktop_screen" src="assets/screenshots/wedding des.png"></div>
+                        <div class="mobile_wrapper"><img class="mobile" src="assets/X.png">
+                            <img class="mobile_screen" src="assets/screenshots/wedding mob.png"></div>
+
+                    </div>
+                    <span class="fs14 bold500 main_text">AZARA</span>
+                    <span class="fs12 bold300 submain_text mt10">Онлайн кошелек криптовалют</span>
+                    <button class="fs12 main_text bold500 mt10">Посмотреть<i class="fal fa-arrow-up"></i></button>
+
+                </div>
+            </div>
+        </div>
 
 
 
 
 
-        <div class="about_specialists column center p50">
-            <span class="center bold700 fs24 main_text">Наши специалисты</span>
-            <div class="wrapper_specialists row center">
+        <div class=" about_specialists column center p50 ">
+            <span class="main_text fs35 bold500 center mt50 ">Наши специалисты</span>
+            <div class="wrapper_specialists row center mt50 ">
                 <div class="specialists ">
-                    <img src="assets/svg_consultation/007-talking.svg">
+                    <img src="assets/svg_consultation/007-talking.svg ">
                 </div>
                 <div class="specialist_info row center ">
                     Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который можно будет включить
                     в свое резюме. Основное преимущество нашего центра — в реальном опыте работы. Мы создали сотни сайтов и точно знаем о нюансах, которые могут возникнуть в процессе разработки. Все, чему учим на курсах, используем каждый день.
                 </div>
             </div>
-            <div class="wrapper_specialists row center reverse">
-                <div class="specialist_info">Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который
+            <div class="wrapper_specialists row center reverse ">
+                <div class="specialist_info ">Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который
                     можно будет включить в свое резюме. Основное преимущество нашего центра — в реальном опыте работы. Мы создали сотни сайтов и точно знаем о нюансах, которые могут возникнуть в процессе разработки. Все, чему учим на курсах, используем
                     каждый день.
 
                 </div>
-                <div class="specialists"><img src="assets/svg_development/002-gamer.svg"></div>
+                <div class="specialists "><img src="assets/svg_development/002-gamer.svg "></div>
 
             </div>
-            <div class="wrapper_specialists row center">
-                <div class="specialists"><img src="assets/svg_promotion/006-advertisement.svg"></div>
-                <div class="specialist_info">Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который
+            <div class="wrapper_specialists row center ">
+                <div class="specialists "><img src="assets/svg_promotion/006-advertisement.svg "></div>
+                <div class="specialist_info ">Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который
                     можно будет включить в свое резюме. Основное преимущество нашего центра — в реальном опыте работы. Мы создали сотни сайтов и точно знаем о нюансах, которые могут возникнуть в процессе разработки. Все, чему учим на курсах, используем
                     каждый день.</div>
             </div>
@@ -311,21 +405,68 @@
 
 
 
-        <div class="advantages row around">
+        <div class="advantages row around ">
 
-            <div class="advantages_info">
-                <div>Скорость</div>
-                <div>Качество</div>
-                <div>Цена</div>
+            <div class="advantages_info column center around white ">
+                <div class="move_icons fs24 ">
+                    <div class="moveright duration2x ">Скорость</div>
+                    <!-- <div class="icons ">
+                        <i class="fal fa-tachometer-fast delay2x moveright "></i>
+                        <i class="fal fa-rabbit-fast moveright left-5 "></i>
+                        <i class="fal fa-rocket-launch delay2x moveright "></i>
+                        <i class="fal fa-shipping-fast moveright "></i>
+                    </div> -->
+                </div>
+                <div class="move_icons fs24 ">
+                    <div class="moveleft duration2x ">Качество</div>
+                    <!-- <div class="icons ">
+                        <i class="fal fa-gem delay2x moveleft top11 "></i>
+                        <i class="fal fa-diamond moveleft top20 "></i>
+                        <i class="fal fa-thumbs-up delay2x moveleft left33 "></i>
+                        <i class="fal fa-gem moveleft right15 "></i>
+                    </div> -->
+                </div>
+                <div class="move_icons fs24 ">
+                    <div class="moverightup duration2x ">Цена</div>
+                    <!-- <div style="width: 100px; " class="icons row wrap ">
+                        <i class="fal fa-tags delay2x moverightup "></i>
+                        <i class="fal fa-hand-holding-usd moverightup "></i>
+                        <i class="fal fa-money-bill moverightup "></i>
+                    </div> -->
+                </div>
             </div>
-            <div class="advantages_info column center">
-                <div class="advantages_circle">Наши достоинства</div>
+            <div class="avantages_main column center fs35 bold500 white duration2x moverightdown ">Наши достойнства</div>
+            <div class="advantages_info column center around white ">
+                <div class="move_icons fs24 ">
+                    <div class="moveleftup duration2x ">Мультиязычность</div>
+                    <!-- <div style="width: 100px; " class="icons row wrap ">
+                        <i class="fal fa-language delay2x moveleft "></i>
+                        <i class="fal fa-globe-europe moveleft "></i>
+                        <i class="fal fa-handshake delay2x moveleft "></i>
+                        <i class="fal fa-book moveleft "></i>
+                    </div> -->
+                </div>
+                <div class="move_icons fs24 ">
+                    <div class="moveleftup duration2x ">Опыт</div>
+                    <!-- <div style="width: 100px; " class="icons row wrap ">
+                        <i class="fal fa-fist-raised delay2x moverightup "></i>
+                        <i class="fal fa-user-visor moverightup "></i>
+                        <i class="fal fa-journal-whills delay2x moverightup "></i>
+                        <i class="fal fa-infinity moverightup "></i>
+                    </div> -->
+
+                </div>
+                <div class="move_icons fs24 ">
+                    <div class="moveleftup duration2x ">Индивидуальный подход</div>
+                    <!-- <div style="width: 100px; " class="icons row wrap ">
+                        <i class="fal fa-user-friends delay2x moveleft "></i>
+                        <i class="fal fa-comments moveleft "></i>
+                        <i class="fal fa-people-arrows delay2x moveleft "></i>
+                        <i class="fal fa-user-headset moveleft "></i>
+                    </div> -->
+                </div>
             </div>
-            <div class="advantages_info">
-                <div>Опыт</div>
-                <div>Владеем несколькими языками</div>
-                <div>Надежность</div>
-            </div>
+
 
 
 
@@ -334,42 +475,72 @@
 
 
 
-        <!-- <div class="feedback">
-            <div class="feedback_info"></div>
-            <div class="feedback_form column">
-                <form class=" center row">
-                    <div><input type="text" value="Имя"></div>
-                    <div><input type="mail" value=" E-mail"></div>
-                    <div><input type="tel" value="Телефон"></div>
-                    <div><textarea></textarea></div>
-                </form>
-            </div>
-        </div> -->
 
 
 
 
-        <div class="footer row">
-            <div class="footer_logo">
-
-
-            </div>
-            <div class="central_footer column center">
-                <div>Главная</div>
-                <div>Услуги</div>
-                <div>Наши проекты</div>
-                <div>О нас</div>
+        <div class="footer row ">
+            <div class="footer_logo column center pointer ">
+                <i class="fab fa-apple fs35 "></i>
+                <span class="p20 bold700 ">SilenceGroup</span>
             </div>
 
-            <div class="footer_rightside">
 
+
+            <div class="central_footer column center around main_text bold500 ">
+                <div>
+                    <a href="# ">Главная</a>
+                </div>
+                <div>
+                    <a href="# ">Услуги</a>
+                </div>
+                <div>
+                    <a href="# ">Наши проекты</a>
+                </div>
+                <div>
+                    <a href="# ">О нас</a>
+                </div>
+            </div>
+
+            <div class="footer_rightside column center ">
+                <div class="contacts column center around helper_text lh2 ">
+                    <div class="bold300 main_text ">Наши контакты</div>
+                    <div class="footer_social ">+8583582852395 <i class="fa fa-mobile-alt "></i><i class="fab fa-viber "></i>
+                        <i class="fab fa-telegram "></i>
+                        <i class="fab fa-whatsapp "></i></div>
+                    <div class="footer_social ">+8583582852395<i class="fab fa-viber "></i>
+                        <i class="fab fa-telegram "></i></div>
+                    <div class="footer_social ">info@SilenceStudio.com <i class="fa fa-envelope "></i></div>
+                    <div class="fs12 ">ООО SilenceStudio</div>
+                    <div class="fs12 ">Республика Беларусь Г.Минск Ул.Есенина 20 к.4</div>
+                </div>
+                <div class="footer_social row center around fs24 main_text ">
+                    <i class="fab fa-instagram "></i>
+                    <i class="fab fa-facebook-f "></i>
+                    <i class="fab fa-viber "></i>
+                    <i class="fab fa-telegram "></i>
+                    <i class="fab fa-whatsapp "></i>
+                </div>
+
+
+
+
+            </div>
+            <div class="column center end fs10 helper_text ">
+                <div class="row center footer_social fs35 ">
+                    <i class="fab fa-cc-visa "></i>
+                    <i class="fab fa-cc-mastercard "></i>
+                    <i class="fab fa-yandex "></i>
+                    <i class="fab fa-bitcoin "></i>
+                </div>
+                copyright SilenceGroup &copy; 2014-2020
             </div>
 
 
 
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js "></script>
 </body>
 
 </html>

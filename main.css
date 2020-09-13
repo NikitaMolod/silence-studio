@@ -41,6 +41,10 @@ body {
     justify-content: flex-end;
 }
 
+.wrap {
+    flex-wrap: wrap;
+}
+
 .pointer {
     cursor: pointer;
 }
@@ -54,7 +58,7 @@ body {
 }
 
 .helper_text {
-    color: #CCC;
+    color: #999;
 }
 
 .lh2 {
@@ -163,6 +167,10 @@ body {
 
 .mt25 {
     margin-top: 25px;
+}
+
+.mt50 {
+    margin-top: 50px;
 }
 
 .mt100 {
@@ -301,6 +309,7 @@ button:focus {
 .meeting_block {
     height: 600px;
     width: 100%;
+    overflow: hidden;
 }
 
 .meeting_block_section {
@@ -373,7 +382,6 @@ button:focus {
 /* этапы работы */
 
 .description_occupation {
-    background: #98aafa67;
     min-height: 500px;
     width: 100%;
 }
@@ -387,6 +395,7 @@ button:focus {
     overflow: hidden;
     background: rgba(255, 255, 255, 0.2);
     color: #333;
+    border: 1px solid rgba(240, 240, 240, 0.4)
 }
 
 .flip {
@@ -398,7 +407,9 @@ button:focus {
     width: 100px;
 }
 
-.project {}
+.project {
+    padding: 25px;
+}
 
 .project_block {
     width: 25%;
@@ -422,10 +433,50 @@ button:focus {
 
 /* Партнеры ,слайдер */
 
-.work_partners {
-    height: 500px;
-    border: 1px solid black;
-    background-color: lightgray;
+.work_partners button i {
+    transform: rotate(30deg);
+    margin: 5px;
+}
+
+.work_partners>div {
+    margin-top: 50px;
+}
+
+.desktop {
+    position: relative;
+    z-index: 2;
+    width: 500px;
+}
+
+.desktop_screen {
+    width: 374px;
+    position: absolute;
+    margin-left: -435px;
+    margin-top: 25px;
+    height: 220px;
+    z-index: 1;
+}
+
+.mobile {
+    position: relative;
+    z-index: 3;
+    width: 200px;
+}
+
+.mobile_screen {
+    position: absolute;
+    margin-left: -163px;
+    width: 127px;
+    margin-top: 8px;
+    z-index: 2;
+    width: 130px;
+}
+
+.desktop_wrapper {}
+
+.mobile_wrapper {
+    position: relative;
+    left: -100px;
 }
 
 
@@ -436,7 +487,9 @@ button:focus {
 
 .about_specialists {}
 
-.wrapper_specialists {}
+.wrapper_specialists {
+    margin-top: 70px;
+}
 
 .specialists {
     width: 40%;
@@ -448,6 +501,9 @@ button:focus {
 
 .specialist_info {
     width: 60%;
+    line-height: 1.7;
+    font-weight: 500;
+    text-align: left;
 }
 
 
@@ -457,16 +513,60 @@ button:focus {
 /* наши достоинства */
 
 .advantages {
-    height: 300px;
-    border: 1px solid black;
-    background-color: beige;
+    background: linear-gradient(20deg, #23a6d5, #ce5784);
 }
 
-.advantages_circle {
-    background-color: cornflowerblue;
-    border-radius: 100%;
-    height: 200px;
-    border: 1px solid black;
+.move_icons {
+    position: relative;
+    padding: 70px 0;
+}
+
+.icons {
+    position: absolute;
+    font-size: 30px;
+    margin-top: -28px;
+    opacity: 0.1;
+    overflow: visible;
+}
+
+.icons>i {
+    margin: 10px;
+}
+
+.moveright {
+    animation: moveright 35s 0s infinite alternate ease-in-out;
+}
+
+.moveleft {
+    animation: moveleft 25s 0s infinite alternate ease-in-out;
+}
+
+.moverightup {
+    animation: moverightup 25s 0s infinite alternate ease-in-out;
+}
+
+.moveleftup {
+    animation: moveleftup 25s 0s infinite alternate ease-in-out;
+}
+
+.moverightdown {
+    animation: moverightdown 25s 0s infinite alternate ease-in-out;
+}
+
+.moveleftdown {
+    animation: moveleftdown 25s 0s infinite alternate ease-in-out;
+}
+
+.delay2x {
+    animation-delay: 2s;
+}
+
+.duration2x {
+    animation-duration: 25s;
+}
+
+.icons>i {
+    position: relative;
 }
 
 
@@ -482,11 +582,11 @@ button:focus {
 }
 
 .website_inputs {
-    width: 50%;
+    width: 30%;
 }
 
 .website_main {
-    width: 50%;
+    width: 40%;
     border-radius: 5px;
     overflow: hidden;
     height: 400px;
@@ -582,7 +682,7 @@ label input {
     width: 40px;
     height: 40px;
     background: linear-gradient(to right, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0.05));
-    border: 2px solid #222;
+    border: 2px solid white;
     border-radius: 7px;
     cursor: pointer;
     outline: none;
@@ -599,40 +699,41 @@ label {
 
 label i {
     position: absolute;
-    color: #222;
+    color: white;
     font-size: 20px;
     transition: 0.2s;
-    opacity: 0;
+    opacity: 0.2;
 }
 
 label input:checked+i {
-    color: white;
+    color: rgba(22, 12, 12, 0.5);
     opacity: 1;
 }
 
 label input:checked {
-    /* background: #23a6d5; */
+    background: white;
     border-color: rgba(255, 255, 255, .6);
+}
+
+.wrapper_checkbox>div {
+    width: 25%;
+}
+
+.wrapper_checkbox {
+    width: 400px;
+}
+
+textarea {
+    font-family: 'Montserrat', sans-serif;
+    min-width: 200px;
+    min-height: 200px;
 }
 
 
 /* Feedback */
 
-.feedback {
-    height: 500px;
-    border: 1px solid black;
-}
-
-.feedback_info {
-    background-color: forestgreen;
-    width: 50%;
-    height: 500px;
-}
-
-.feedback_form {
-    width: 50%;
-    background-color: gainsboro;
-    height: 500px;
+.feedback_wrapper {
+    width: 30%;
 }
 
 
@@ -643,25 +744,67 @@ label input:checked {
 
 .footer {
     height: 250px;
-    background-color: goldenrod;
+    border-top: 1px solid rgba(225, 225, 225, 1);
 }
 
 .footer_logo {
     width: 20%;
-    background-color: black;
     height: 250px;
 }
 
 .central_footer {
     width: 40%;
-    background-color: lavender;
     height: 250px;
 }
 
 .footer_rightside {
     width: 40%;
-    background-color: palevioletred;
     height: 250px;
+}
+
+.footer_social>i {
+    cursor: pointer;
+    margin: 10px;
+}
+
+.footer .fa-telegram {
+    color: #23a6d5
+}
+
+.footer .fa-viber {
+    color: #b754cf
+}
+
+.footer .fa-whatsapp {
+    color: #38d47e
+}
+
+.footer .fa-facebook-f {
+    color: #1c539c
+}
+
+.footer .fa-instagram {
+    background: -webkit-linear-gradient(45deg, rgb(99, 20, 190), rgb(255, 166, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer .fa-cc-visa {
+    color: #232b97
+}
+
+.footer .fa-cc-mastercard {
+    background: -webkit-linear-gradient(0deg, rgb(190, 0, 0), rgb(255, 166, 0));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.footer .fa-yandex {
+    color: #fff12d
+}
+
+.footer .fa-bitcoin {
+    color: #dfd875
 }
 
 .bounce {
@@ -784,6 +927,63 @@ label input:checked {
     .specialist_info {
         width: 100%;
     }
+    .wrapper_checkbox {
+        width: 100%;
+    }
+    .website_inputs {
+        width: 100%;
+    }
+    .advantages {
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+    }
+    .move_icons {
+        padding: 50px;
+    }
+    .mobile_wrapper {
+        left: auto;
+    }
+    .work_partners {
+        overflow: hidden;
+        width: 100%;
+    }
+    .work_partners>div>div {
+        flex-direction: column-reverse;
+    }
+    .desktop {
+        width: 450px;
+    }
+    .desktop_screen {
+        width: 341px;
+        position: absolute;
+        margin-left: -396px;
+        margin-top: 25px;
+        height: 202px;
+        z-index: 1;
+    }
+    .footer {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+    .central_footer {
+        height: auto;
+        width: 90%;
+    }
+    .footer_rightside {
+        height: auto;
+        width: 90%;
+        margin: 25px;
+    }
+    .central_footer>div {
+        margin: 25px;
+    }
+    .footer_logo {
+        height: auto;
+        width: 90%;
+        margin: 25px;
+    }
 }
 
 @keyframes bounce {
@@ -837,6 +1037,42 @@ label input:checked {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes moveright {
+    to {
+        transform: translate(50px, 0);
+    }
+}
+
+@keyframes moveleft {
+    to {
+        transform: translate(-50px, 0);
+    }
+}
+
+@keyframes moverightup {
+    to {
+        transform: translate(50px, -25px);
+    }
+}
+
+@keyframes moveleftup {
+    to {
+        transform: translate(-50px, -25px);
+    }
+}
+
+@keyframes moverightdown {
+    to {
+        transform: translate(50px, 25px);
+    }
+}
+
+@keyframes moveleftdown {
+    to {
+        transform: translate(-50px, 25px);
     }
 }
 
