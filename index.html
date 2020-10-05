@@ -18,7 +18,7 @@
             <transition name="pop">
                 <div class="menu row center" v-if="windowWidth>580||menuOpen">
                     <div class="header_section row between center fs12">
-                        <div><a @click="check" href="#">Главная</a></div>
+                        <div><a @click="check" href="index.html">Главная</a></div>
                         <div><a href="#">Услуги</a></div>
                         <div><a href="#">Наши проекты</a></div>
                         <div><a href="#">О нас</a></div>
@@ -374,27 +374,35 @@
 
 
         <div class=" about_specialists column center p50 ">
+
             <span class="main_text fs35 bold500 center mt50 ">Наши специалисты</span>
-            <div class="wrapper_specialists row center mt50 ">
-                <div class="specialists ">
-                    <img src="assets/svg_consultation/007-talking.svg ">
+            <div class="wrapper_specialists row center mt50 around">
+                <div class=" foto_about design ">
+                    <div class="row center bold300 fs35 ">Дизайнеры</div>
                 </div>
                 <div class="specialist_info row center ">
                     Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который можно будет включить
                     в свое резюме. Основное преимущество нашего центра — в реальном опыте работы. Мы создали сотни сайтов и точно знаем о нюансах, которые могут возникнуть в процессе разработки. Все, чему учим на курсах, используем каждый день.
                 </div>
             </div>
-            <div class="wrapper_specialists row center reverse ">
-                <div class="specialist_info ">Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который
+
+            <div class="wrapper_specialists row center reverse around ">
+
+                <div class="specialist_info p20 ">Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который
                     можно будет включить в свое резюме. Основное преимущество нашего центра — в реальном опыте работы. Мы создали сотни сайтов и точно знаем о нюансах, которые могут возникнуть в процессе разработки. Все, чему учим на курсах, используем
                     каждый день.
-
                 </div>
-                <div class="specialists "><img src="assets/svg_development/002-gamer.svg "></div>
+                <div class="foto_about develop ">
+                    <div class="row center bold300 fs35 ">Разработчики</div>
+                </div>
 
             </div>
-            <div class="wrapper_specialists row center ">
-                <div class="specialists "><img src="assets/svg_promotion/006-advertisement.svg "></div>
+            <div class="wrapper_specialists row center around ">
+                <div class="foto_about seo ">
+                    <div class="row center bold300 fs35 lh2">SEO/SMM специалисты</div>
+                </div>
+
+
                 <div class="specialist_info ">Какой бы курс вы ни выбрали, вам будет нужно много работать. Не только на занятиях, но и дома. Это все необходимо, чтобы после обучения у вас был не только сертификат, но и готовый проект (а если постараться, то даже не один), который
                     можно будет включить в свое резюме. Основное преимущество нашего центра — в реальном опыте работы. Мы создали сотни сайтов и точно знаем о нюансах, которые могут возникнуть в процессе разработки. Все, чему учим на курсах, используем
                     каждый день.</div>
@@ -404,71 +412,153 @@
 
 
 
+        <div class="bold500 main_text fs35 mt50 center">Цены</div>
+        <div class="advantages row around mt50 ">
 
-        <div class="advantages row around ">
 
-            <div class="advantages_info column center around white ">
-                <div class="move_icons fs24 ">
-                    <div class="moveright duration2x ">Скорость</div>
-                    <div class="icons ">
-                        <i class="fal fa-tachometer-fast delay2x moveright "></i>
-                        <i class="fal fa-rabbit-fast moveright left-5 "></i>
-                        <i class="fal fa-rocket-launch delay2x moveright "></i>
-                        <i class="fal fa-shipping-fast moveright "></i>
+            <div class="price_info column  between p20">
+
+                <div>
+                    <div class="price_header bold600">Стандарт</div>
+                    <div class="price_count fs24 bold800 mt25">240$ <span class="helper_text fs12 bold200 lh_min"> / бессрочно</span></div>
+                    <div class="hr mt10 "></div>
+                    <div class="fs12 mt25 main_text">
+                        <i class="fal fa-check blue"></i> UX проектирование
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Верстка шаблона
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue "></i> Поисковая оптимизация
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Размещение сайта
                     </div>
                 </div>
-                <div class="move_icons fs24 ">
-                    <div class="moveleft duration2x ">Качество</div>
-                    <!-- <div class="icons ">
-                        <i class="fal fa-gem delay2x moveleft top11 "></i>
-                        <i class="fal fa-diamond moveleft top20 "></i>
-                        <i class="fal fa-thumbs-up delay2x moveleft left33 "></i>
-                        <i class="fal fa-gem moveleft right15 "></i>
-                    </div> -->
-                </div>
-                <div class="move_icons fs24 ">
-                    <div class="moverightup duration2x ">Цена</div>
-                    <!-- <div style="width: 100px; " class="icons row wrap ">
-                        <i class="fal fa-tags delay2x moverightup "></i>
-                        <i class="fal fa-hand-holding-usd moverightup "></i>
-                        <i class="fal fa-money-bill moverightup "></i>
-                    </div> -->
-                </div>
+
+                <div class="btn center blue ">
+                    <div class="hr "></div>
+                    <button class="fs12 mt10"><i style="margin-right:10px;" class="fal fa-shopping-cart "></i>Заказать</button></div>
+
+
             </div>
-            <div class="avantages_main column center fs35 bold500 white duration2x moverightdown ">Наши достойнства</div>
-            <div class="advantages_info column center around white ">
-                <div class="move_icons fs24 ">
-                    <div class="moveleftup duration2x ">Мультиязычность</div>
-                    <!-- <div style="width: 100px; " class="icons row wrap ">
-                        <i class="fal fa-language delay2x moveleft "></i>
-                        <i class="fal fa-globe-europe moveleft "></i>
-                        <i class="fal fa-handshake delay2x moveleft "></i>
-                        <i class="fal fa-book moveleft "></i>
-                    </div> -->
-                </div>
-                <div class="move_icons fs24 ">
-                    <div class="moveleftup duration2x ">Опыт</div>
-                    <!-- <div style="width: 100px; " class="icons row wrap ">
-                        <i class="fal fa-fist-raised delay2x moverightup "></i>
-                        <i class="fal fa-user-visor moverightup "></i>
-                        <i class="fal fa-journal-whills delay2x moverightup "></i>
-                        <i class="fal fa-infinity moverightup "></i>
-                    </div> -->
+            <div class="price_info column  between p20">
+                <div>
+                    <div class="price_header bold600">Индивидуальный</div>
+                    <div class="price_count fs24 bold800 mt25">440$ <span class="helper_text fs12 bold200 lh_min"> / бессрочно</span></div>
+                    <div class="hr mt10 "></div>
+                    <div class="fs12 mt25 main_text">
+                        <i class="fal fa-check blue"></i> UX проектирование
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Верстка шаблона
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue "></i> Поисковая оптимизация
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Размещение сайта
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Индивидуальный дизайн
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Поддержка 24/7
+                    </div>
 
                 </div>
-                <div class="move_icons fs24 ">
-                    <div class="moveleftup duration2x ">Индивидуальный подход</div>
-                    <!-- <div style="width: 100px; " class="icons row wrap ">
-                        <i class="fal fa-user-friends delay2x moveleft "></i>
-                        <i class="fal fa-comments moveleft "></i>
-                        <i class="fal fa-people-arrows delay2x moveleft "></i>
-                        <i class="fal fa-user-headset moveleft "></i>
-                    </div> -->
-                </div>
+
+                <div class="btn center blue ">
+                    <div class="hr "></div>
+                    <button class="fs12 mt10"><i style="margin-right:10px;" class="fal fa-shopping-cart "></i>Заказать</button></div>
+
+
             </div>
+            <div class="price_info column gold  between p20">
+                <div>
+                    <div class="price_header bold600">Продвинутый <span class="fs12 p10" style="color:rgb(250,150,150);">хит</span> </div>
+                    <div class="price_count fs24 bold800 mt25">550$ <span class="helper_text fs12 bold200 lh_min"> / месяц</span></div>
+                    <div class="hr mt10 "></div>
+                    <div class="fs12 mt25 main_text">
+                        <i class="fal fa-check blue"></i> UX проектирование
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Верстка шаблона
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue "></i> Поисковая оптимизация
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Размещение сайта
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Индивидуальный дизайн
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Поддержка 24/7
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Интернет-магазин
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> SEO продвижение
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> SMM сопровождение
+                    </div>
+
+                </div>
+
+                <div class="btn center blue ">
+                    <div class="hr "></div>
+                    <button class="fs12 mt10"><i style="margin-right:10px;" class="fal fa-shopping-cart "></i>Заказать</button></div>
 
 
+            </div>
+            <div class="price_info column  between p20">
+                <div>
+                    <div class="price_header bold600">Особый <span class="fs12 p10" style="color:rgb(250,150,150);">новинка</span></div>
+                    <div class="price_count fs18 bold800 mt25">Договорная <span class="helper_text fs12 bold200 lh_min"> / бессрочно</span></div>
+                    <div class="hr mt10 "></div>
+                    <div class="fs12 mt25 main_text">
+                        <i class="fal fa-check blue"></i> UX проектирование
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Верстка шаблона
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue "></i> Поисковая оптимизация
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Размещение сайта
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Индивидуальный дизайн
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Поддержка 24/7
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> Интернет-магазин
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> SEO продвижение
+                    </div>
+                    <div class="fs12 mt10 main_text">
+                        <i class="fal fa-check blue"></i> SMM сопровождение
+                    </div>
+                    <div class="fs12 mt10 main_text bold600">
+                        <i class="fal fa-check blue"></i> Дополнительные функции
+                    </div>
 
+                </div>
+
+                <div class="btn center blue ">
+                    <div class="hr "></div>
+                    <button class="fs12 mt10"><i style="margin-right:10px;" class="fal fa-shopping-cart "></i>Заказать</button></div>
+
+
+            </div>
 
         </div>
 
@@ -479,7 +569,7 @@
 
 
 
-        <div class="footer row ">
+        <div class="footer row mt50">
             <div class="footer_logo column center pointer ">
                 <i class="fab fa-apple fs35 "></i>
                 <span class="p20 bold700 ">SilenceGroup</span>
